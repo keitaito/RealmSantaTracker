@@ -25,6 +25,8 @@ class SantaTrackerViewController: UIViewController {
     // Needs the reference to the map view
     private var mapManager: MapManager!
     
+    private let realmManager = SantaRealmManager()
+    
     // MARK: - Methods
 
     override func viewDidLoad() {
@@ -36,15 +38,8 @@ class SantaTrackerViewController: UIViewController {
         mapManager = MapManager(mapView: mapView)
         
         // Find the Santa data in Realm
-        let realm = try! Realm()
+        let realm = realmManager.realm()
         let santas = realm.objects(Santa.self)
-        
-        // Set up the test Santa if he's not already there
-        if santas.isEmpty {
-            try? realm.write {
-                realm.add(Santa.test())
-            }
-        }
         
         // Be responsible in unwrapping!
         if let santa = santas.first {
@@ -72,7 +67,7 @@ class SantaTrackerViewController: UIViewController {
     }
     
     deinit {
-        let realm = try! Realm()
+        let realm = realmManager.realm()
         let santas = realm.objects(Santa.self)
         if let santa = santas.first {
             santa.removeObserver(self)
