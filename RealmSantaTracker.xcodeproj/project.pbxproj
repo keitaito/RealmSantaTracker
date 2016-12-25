@@ -15,6 +15,7 @@
 		87D3A2881E0F769200798B2A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D3A2871E0F769200798B2A /* MapKit.framework */; };
 		87D3A28A1E0F7B0800798B2A /* Santa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A2891E0F7B0800798B2A /* Santa.swift */; };
 		87D3A28C1E0F7BA900798B2A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A28B1E0F7BA900798B2A /* Location.swift */; };
+		87D3A28E1E0F7EA900798B2A /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A28D1E0F7EA900798B2A /* MapManager.swift */; };
 		B848FAD18514FF047AB9F301 /* Pods_RealmSantaTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D90C34788B5D3AC2C03773 /* Pods_RealmSantaTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		87D3A2871E0F769200798B2A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		87D3A2891E0F7B0800798B2A /* Santa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Santa.swift; sourceTree = "<group>"; };
 		87D3A28B1E0F7BA900798B2A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		87D3A28D1E0F7EA900798B2A /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		91D90C34788B5D3AC2C03773 /* Pods_RealmSantaTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmSantaTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD599AE4FB895250E7E0DCF0 /* Pods-RealmSantaTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmSantaTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealmSantaTracker/Pods-RealmSantaTracker.release.xcconfig"; sourceTree = "<group>"; };
 		FE41D062F99666ED202314A2 /* Pods-RealmSantaTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmSantaTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmSantaTracker/Pods-RealmSantaTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				87D3A2841E0F75A100798B2A /* SantaTrackerViewController.swift */,
 				87D3A2891E0F7B0800798B2A /* Santa.swift */,
 				87D3A28B1E0F7BA900798B2A /* Location.swift */,
+				87D3A28D1E0F7EA900798B2A /* MapManager.swift */,
 				87D3A2761E0F725F00798B2A /* Main.storyboard */,
 				87D3A2791E0F725F00798B2A /* Assets.xcassets */,
 				87D3A27B1E0F725F00798B2A /* LaunchScreen.storyboard */,
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87D3A2851E0F75A100798B2A /* SantaTrackerViewController.swift in Sources */,
+				87D3A28E1E0F7EA900798B2A /* MapManager.swift in Sources */,
 				87D3A2731E0F725F00798B2A /* AppDelegate.swift in Sources */,
 				87D3A28C1E0F7BA900798B2A /* Location.swift in Sources */,
 				87D3A28A1E0F7B0800798B2A /* Santa.swift in Sources */,
