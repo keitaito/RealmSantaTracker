@@ -25,7 +25,7 @@ class SantaTrackerViewController: UIViewController {
     // Needs the reference to the map view
     private var mapManager: MapManager!
     
-    // Methods
+    // MARK: - Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,21 +52,14 @@ class SantaTrackerViewController: UIViewController {
             mapManager.update(with: santa)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func update(with santa: Santa) {
+        mapManager.update(with: santa)
+        let activity = santa.activity.description
+        let presentsRemaining = "\(santa.presentsRemaining)"
+        DispatchQueue.main.async {
+            self.activityLabel.text = activity
+            self.presentRemainingLabel.text = presentsRemaining
+        }
     }
-    */
-
 }
