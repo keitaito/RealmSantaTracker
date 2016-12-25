@@ -22,8 +22,22 @@ class Santa: Object {
         }
     }
     
+    let route = List<Stop>()
+    
+    private dynamic var _activity: Int = 0
+    var activity: Activity {
+        get {
+            return Activity(rawValue: _activity)!
+        }
+        set {
+            _activity = newValue.rawValue
+        }
+    }
+    
+    dynamic var presentsRemaining: Int = 0
+    
     override static func ignoredProperties() -> [String] {
-        return ["currentLocation"]
+        return ["currentLocation", "activity"]
     }
 }
 
@@ -31,6 +45,8 @@ extension Santa {
     static func test() -> Santa {
         let santa = Santa()
         santa.currentLocation = Location(latitude: 37.7749, longitude: -122.4194)
+        santa.activity = .deliveringPresents
+        santa.presentsRemaining = 42
         return santa
     }
 }
