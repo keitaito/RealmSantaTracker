@@ -222,6 +222,13 @@
                             <constraint firstAttribute="trailing" secondItem="h83-qO-E4D" secondAttribute="trailing" id="sYx-Cd-Sc2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityLabel" destination="Yh1-r8-1Wf" id="KJ4-cT-iPd"/>
+                        <outlet property="mapView" destination="h83-qO-E4D" id="xEO-Zd-6sw"/>
+                        <outlet property="presentRemainingLabel" destination="MeL-Yf-ico" id="d3J-aJ-5RP"/>
+                        <outlet property="temperratureLabel" destination="3kx-iW-5sj" id="yEY-yz-4eN"/>
+                        <outlet property="timeRemainingLabel" destination="Dz4-og-3yB" id="LVI-R3-i6v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qci-XZ-GLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

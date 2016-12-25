@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import MapKit
 
 class SantaTrackerViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    @IBOutlet private weak var timeRemainingLabel: UILabel!
+    @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var activityLabel: UILabel!
+    @IBOutlet private weak var temperratureLabel: UILabel!
+    @IBOutlet private weak var presentRemainingLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
