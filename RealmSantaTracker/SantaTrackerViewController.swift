@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class SantaTrackerViewController: UIViewController {
     
@@ -17,11 +18,39 @@ class SantaTrackerViewController: UIViewController {
     @IBOutlet private weak var activityLabel: UILabel!
     @IBOutlet private weak var temperratureLabel: UILabel!
     @IBOutlet private weak var presentRemainingLabel: UILabel!
+    
+    // MARK: - Properties
+    
+    // Has to be implicitly unwrapped
+    // Needs the reference to the map view
+    private var mapManager: MapManager!
+    
+    // Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Set up the map manager
+        mapManager = MapManager(mapView: mapView)
+        
+        // Find the Santa data in Realm
+        let realm = try! Realm()
+        let santas = realm.objects(Santa.self)
+        
+        // Set up the test Santa if he's not already there
+        if santas.isEmpty {
+            try? realm.write {
+                realm.add(Santa.test())
+            }
+        }
+        
+        // Be responsible in unwrapping!
+        if let santa = santas.first {
+            // Update the map
+            mapManager.update(with: santa)
+        }
     }
 
     override func didReceiveMemoryWarning() {
