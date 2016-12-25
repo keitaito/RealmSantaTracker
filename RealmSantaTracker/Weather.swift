@@ -63,6 +63,10 @@ extension Weather {
     enum Condition: Int {
         case unknown = 0
         case clearDay, clearNight, rain, snow, sleet, wind, fog, cloudy, partlyCloudyDay, partlyCloudyNight
+        
+        var icon: UIImage {
+            return UIImage(named: "condition-\(rawValue)")!
+        }
     }
 }
 

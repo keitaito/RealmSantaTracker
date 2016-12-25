@@ -18,6 +18,7 @@ class SantaTrackerViewController: UIViewController {
     @IBOutlet private weak var activityLabel: UILabel!
     @IBOutlet private weak var temperratureLabel: UILabel!
     @IBOutlet private weak var presentRemainingLabel: UILabel!
+    @IBOutlet private weak var conditionIconView: UIImageView!
     
     // MARK: - Properties
     
@@ -30,6 +31,7 @@ class SantaTrackerViewController: UIViewController {
     private var notificationToken: NotificationToken?
     // We have to keep a strong reference to Santa for KVO to work
     private var santa: Santa?
+    private var weather: Weather?
     
     // MARK: - Methods
 
@@ -44,7 +46,7 @@ class SantaTrackerViewController: UIViewController {
         // Find the Santa data in Realm
         realmManager.logIn {
             // Be responsible in unwrapping!
-            if let realm = self.realmManager.realm() {
+            if let realm = self.realmManager.santaRealm() {
                 let santas = realm.objects(Santa.self)
                 
                 // Has Santa's info already been downloaded?
@@ -72,6 +74,8 @@ class SantaTrackerViewController: UIViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let santa = object as? Santa {
             update(with: santa)
+        } else if let weather = object as? Weather {
+            update(with: weather)
         } else {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
@@ -84,6 +88,38 @@ class SantaTrackerViewController: UIViewController {
         DispatchQueue.main.async {
             self.activityLabel.text = activity
             self.presentRemainingLabel.text = presentsRemaining
+        }
+        
+        guard let weatherRealm = realmManager.weatherRealm() else {
+            return
+        }
+        weather?.removeObserver(self)
+        let weatherLocation = Location(latitude: santa.currentLocation.latitude, longitude: santa.currentLocation.longitude)
+        let newWeather = Weather(location: weatherLocation)
+        try? weatherRealm.write {
+            weatherRealm.add(newWeather)
+        }
+        newWeather.addObserver(self)
+        weather = newWeather
+    }
+    
+    private func update(with weather: Weather) {
+        let temperatureText: String
+        let conditionIcon: UIImage
+        switch weather.loadingStatus {
+        case .uploading:
+            temperatureText = "??"
+            conditionIcon = Weather.Condition.unknown.icon
+        case .processing:
+            temperatureText = "..."
+            conditionIcon = Weather.Condition.unknown.icon
+        case .complete(temperature: let temperature, condition: let condition):
+            temperatureText = "\(temperature)°C"
+            conditionIcon = condition.icon
+        }
+        DispatchQueue.main.async {
+            self.temperratureLabel.text = temperatureText
+            self.conditionIconView.image = conditionIcon
         }
     }
     
