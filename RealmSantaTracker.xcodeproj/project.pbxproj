@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87AB885B1E0F9E2200A9009D /* SantaRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB885A1E0F9E2200A9009D /* SantaRealmManager.swift */; };
+		87AB885E1E0FB2CB00A9009D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB885D1E0FB2CB00A9009D /* Weather.swift */; };
 		87D3A2731E0F725F00798B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A2721E0F725F00798B2A /* AppDelegate.swift */; };
 		87D3A2781E0F725F00798B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D3A2761E0F725F00798B2A /* Main.storyboard */; };
 		87D3A27A1E0F725F00798B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D3A2791E0F725F00798B2A /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		87AB885A1E0F9E2200A9009D /* SantaRealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SantaRealmManager.swift; sourceTree = "<group>"; };
 		87AB885C1E0FACBD00A9009D /* RealmSantaTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RealmSantaTracker.entitlements; sourceTree = "<group>"; };
+		87AB885D1E0FB2CB00A9009D /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		87D3A26F1E0F725F00798B2A /* RealmSantaTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmSantaTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D3A2721E0F725F00798B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87D3A2771E0F725F00798B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				87D3A28B1E0F7BA900798B2A /* Location.swift */,
 				87D3A28F1E0F888000798B2A /* Stop.swift */,
 				87D3A2911E0F89DD00798B2A /* Activity.swift */,
+				87AB885D1E0FB2CB00A9009D /* Weather.swift */,
 				87D3A28D1E0F7EA900798B2A /* MapManager.swift */,
 				87AB885A1E0F9E2200A9009D /* SantaRealmManager.swift */,
 				87D3A2761E0F725F00798B2A /* Main.storyboard */,
@@ -248,6 +251,7 @@
 				87D3A28E1E0F7EA900798B2A /* MapManager.swift in Sources */,
 				87D3A2921E0F89DD00798B2A /* Activity.swift in Sources */,
 				87D3A2731E0F725F00798B2A /* AppDelegate.swift in Sources */,
+				87AB885E1E0FB2CB00A9009D /* Weather.swift in Sources */,
 				87D3A28C1E0F7BA900798B2A /* Location.swift in Sources */,
 				87AB885B1E0F9E2200A9009D /* SantaRealmManager.swift in Sources */,
 				87D3A28A1E0F7B0800798B2A /* Santa.swift in Sources */,
