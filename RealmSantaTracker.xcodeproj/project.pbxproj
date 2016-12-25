@@ -12,6 +12,7 @@
 		87D3A27A1E0F725F00798B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D3A2791E0F725F00798B2A /* Assets.xcassets */; };
 		87D3A27D1E0F725F00798B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D3A27B1E0F725F00798B2A /* LaunchScreen.storyboard */; };
 		87D3A2851E0F75A100798B2A /* SantaTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A2841E0F75A100798B2A /* SantaTrackerViewController.swift */; };
+		87D3A2881E0F769200798B2A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D3A2871E0F769200798B2A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		87D3A27C1E0F725F00798B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87D3A27E1E0F725F00798B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87D3A2841E0F75A100798B2A /* SantaTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SantaTrackerViewController.swift; sourceTree = "<group>"; };
+		87D3A2871E0F769200798B2A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D3A2881E0F769200798B2A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				87D3A2711E0F725F00798B2A /* RealmSantaTracker */,
 				87D3A2701E0F725F00798B2A /* Products */,
+				87D3A2861E0F769200798B2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,14 @@
 				87D3A27E1E0F725F00798B2A /* Info.plist */,
 			);
 			path = RealmSantaTracker;
+			sourceTree = "<group>";
+		};
+		87D3A2861E0F769200798B2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87D3A2871E0F769200798B2A /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +110,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = D433NUFZ5K;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
