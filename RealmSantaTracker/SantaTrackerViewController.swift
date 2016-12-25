@@ -26,6 +26,10 @@ class SantaTrackerViewController: UIViewController {
     private var mapManager: MapManager!
     
     private let realmManager = SantaRealmManager()
+    // We need this if Santa hasn't been downloaded
+    private var notificationToken: NotificationToken?
+    // We have to keep a strong reference to Santa for KVO to work
+    private var santa: Santa?
     
     // MARK: - Methods
 
@@ -38,13 +42,30 @@ class SantaTrackerViewController: UIViewController {
         mapManager = MapManager(mapView: mapView)
         
         // Find the Santa data in Realm
-        let realm = realmManager.realm()
-        let santas = realm.objects(Santa.self)
-        
-        // Be responsible in unwrapping!
-        if let santa = santas.first {
-            // There used to be a call to mapManager in here, but not any more!
-            santa.addObserver(self)
+        realmManager.logIn {
+            // Be responsible in unwrapping!
+            if let realm = self.realmManager.realm() {
+                let santas = realm.objects(Santa.self)
+                
+                // Has Santa's info already been downloaded?
+                if let santa = santas.first {
+                    // Yep, so just use it
+                    self.santa = santa
+                    santa.addObserver(self)
+                } else {
+                    // Not yet, so get notified when it has been
+                    self.notificationToken = santas.addNotificationBlock {
+                        _ in
+                        let santas = realm.objects(Santa.self)
+                        if let santa = santas.first {
+                            self.notificationToken?.stop()
+                            self.notificationToken = nil
+                            self.santa = santa
+                            santa.addObserver(self)
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -67,10 +88,6 @@ class SantaTrackerViewController: UIViewController {
     }
     
     deinit {
-        let realm = realmManager.realm()
-        let santas = realm.objects(Santa.self)
-        if let santa = santas.first {
-            santa.removeObserver(self)
-        }
+        santa?.removeObserver(self)
     }
 }

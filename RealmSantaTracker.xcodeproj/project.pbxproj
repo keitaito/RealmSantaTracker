@@ -24,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		87AB885A1E0F9E2200A9009D /* SantaRealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SantaRealmManager.swift; sourceTree = "<group>"; };
+		87AB885C1E0FACBD00A9009D /* RealmSantaTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RealmSantaTracker.entitlements; sourceTree = "<group>"; };
 		87D3A26F1E0F725F00798B2A /* RealmSantaTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmSantaTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D3A2721E0F725F00798B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87D3A2771E0F725F00798B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		87D3A2711E0F725F00798B2A /* RealmSantaTracker */ = {
 			isa = PBXGroup;
 			children = (
+				87AB885C1E0FACBD00A9009D /* RealmSantaTracker.entitlements */,
 				87D3A2721E0F725F00798B2A /* AppDelegate.swift */,
 				87D3A2841E0F75A100798B2A /* SantaTrackerViewController.swift */,
 				87D3A2891E0F7B0800798B2A /* Santa.swift */,
@@ -148,6 +150,9 @@
 						DevelopmentTeam = D433NUFZ5K;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
 							};
@@ -368,6 +373,7 @@
 			baseConfigurationReference = FE41D062F99666ED202314A2 /* Pods-RealmSantaTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RealmSantaTracker/RealmSantaTracker.entitlements;
 				DEVELOPMENT_TEAM = D433NUFZ5K;
 				INFOPLIST_FILE = RealmSantaTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -382,6 +388,7 @@
 			baseConfigurationReference = CD599AE4FB895250E7E0DCF0 /* Pods-RealmSantaTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RealmSantaTracker/RealmSantaTracker.entitlements;
 				DEVELOPMENT_TEAM = D433NUFZ5K;
 				INFOPLIST_FILE = RealmSantaTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
