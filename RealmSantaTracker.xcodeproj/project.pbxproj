@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		87D3A2731E0F725F00798B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A2721E0F725F00798B2A /* AppDelegate.swift */; };
-		87D3A2751E0F725F00798B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A2741E0F725F00798B2A /* ViewController.swift */; };
 		87D3A2781E0F725F00798B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D3A2761E0F725F00798B2A /* Main.storyboard */; };
 		87D3A27A1E0F725F00798B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D3A2791E0F725F00798B2A /* Assets.xcassets */; };
 		87D3A27D1E0F725F00798B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D3A27B1E0F725F00798B2A /* LaunchScreen.storyboard */; };
+		87D3A2851E0F75A100798B2A /* SantaTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A2841E0F75A100798B2A /* SantaTrackerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		87D3A26F1E0F725F00798B2A /* RealmSantaTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmSantaTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D3A2721E0F725F00798B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87D3A2741E0F725F00798B2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87D3A2771E0F725F00798B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87D3A2791E0F725F00798B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87D3A27C1E0F725F00798B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87D3A27E1E0F725F00798B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87D3A2841E0F75A100798B2A /* SantaTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SantaTrackerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				87D3A2721E0F725F00798B2A /* AppDelegate.swift */,
-				87D3A2741E0F725F00798B2A /* ViewController.swift */,
+				87D3A2841E0F75A100798B2A /* SantaTrackerViewController.swift */,
 				87D3A2761E0F725F00798B2A /* Main.storyboard */,
 				87D3A2791E0F725F00798B2A /* Assets.xcassets */,
 				87D3A27B1E0F725F00798B2A /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D3A2751E0F725F00798B2A /* ViewController.swift in Sources */,
+				87D3A2851E0F75A100798B2A /* SantaTrackerViewController.swift in Sources */,
 				87D3A2731E0F725F00798B2A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
